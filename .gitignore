@@ -1,0 +1,12 @@
+*.pdf
+*ppsx
+*docx
+*zip
+*tif
+*jpg
+*png
+*tiff
+*/venv
+*.npy
+*.exe
+*.chromedriver
