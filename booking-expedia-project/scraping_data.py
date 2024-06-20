@@ -268,6 +268,8 @@ def main():
                     hotel.append(snapshot_date.date())  # Add snapshot date
                     hotel.append((snapshot_date + timedelta(days=ttt)).date())  # Add check-in date
                     hotel.append((snapshot_date + timedelta(days=ttt + los)).date())  # Add check-out date
+                    hotel.append(ttt)
+                    hotel.append(los)
                 all_booking_data.extend(booking_data)
 
                 expedia_data = asyncio.run(scrape_expedia_page(expedia_url))
@@ -275,27 +277,31 @@ def main():
                     hotel.append(snapshot_date.date())  # Add snapshot date
                     hotel.append((snapshot_date + timedelta(days=ttt)).date())  # Add check-in date
                     hotel.append((snapshot_date + timedelta(days=ttt + los)).date())  # Add check-out date
+                    hotel.append(ttt)
+                    hotel.append(los)
                 all_expedia_data.extend(expedia_data)
                 
                 completed_searches += 1
                 print(f"Completed {completed_searches} out of {total_searches} searches.")
 
-    with open('scraped_data/booking_data.csv', 'w', newline='', encoding='utf-8') as file:
+    with open('scraped_data/booking_data_test.csv', 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow([
             "Hotel Name", "Score", "Distance to Center", "Price", 
             "Taxes and Fees", "Total Price", "Nights and Adults", "Card Deal", 
             "Stars", "Subway Access", "Neighborhood", "Room Type", "Bed Type", 
-            "Cancellation Policy", "Payment Policy", "Review Class", "Number of Reviews", "Date of search", "Checkin", "Checkout"
+            "Cancellation Policy", "Payment Policy", "Classification", "Number of Reviews",
+            "Date of search", "Checkin", "Checkout", "ttt", "los"
         ])
         writer.writerows(all_booking_data)
 
-    with open('scraped_data/expedia_data.csv', 'w', newline='', encoding='utf-8') as file:
+    with open('scraped_data/expedia_data_test.csv', 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        writer.writerow(["Hotel Name", "Price Before Taxes", "Rating", 
-                        "Classification", "Reviews", "Stay Type", 
-                        "Bed type", "Neighborhood", "District", "Cancellation policy", "Payment policy",
-                        "Price After Taxes", "Date of search", "Checkin", "Checkout"])
+        writer.writerow(["Hotel Name", "Price Before Taxes", "Score", 
+                        "Classification", "Number of Reviews", "Room Type", 
+                        "Bed Type", "Neighborhood", "District", "Cancellation Policy", "Payment Policy",
+                        "Total Price", "Date of search", "Checkin", "Checkout",
+                        "ttt", "los"])
         
         writer.writerows(all_expedia_data)
 
