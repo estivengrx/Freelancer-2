@@ -162,6 +162,7 @@ async def scrape_expedia_page(url):
                     text = await price_after_tax_tags.nth(i).text_content()
                     if 'total' in text:
                         price_after_tax = text.split('$')[1].split(' ')[0]
+                        price_after_tax = price_after_tax.replace(',', '')
                         break
 
                 # Extract rating (if available)
@@ -284,7 +285,7 @@ def main():
                 completed_searches += 1
                 print(f"Completed {completed_searches} out of {total_searches} searches.")
 
-    with open('scraped_data/booking_data_test.csv', 'w', newline='', encoding='utf-8') as file:
+    with open('scraped_data/booking_data.csv', 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow([
             "Hotel Name", "Score", "Distance to Center", "Price", 
@@ -295,7 +296,7 @@ def main():
         ])
         writer.writerows(all_booking_data)
 
-    with open('scraped_data/expedia_data_test.csv', 'w', newline='', encoding='utf-8') as file:
+    with open('scraped_data/expedia_data.csv', 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow(["Hotel Name", "Price Before Taxes", "Score", 
                         "Classification", "Number of Reviews", "Room Type", 
