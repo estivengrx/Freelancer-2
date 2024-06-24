@@ -11,7 +11,7 @@ from playwright.async_api import async_playwright
 
 # Path to the WebDriver executable, in this case I'm using chromedriver, this can be downloaded from the following link:
 # https://developer.chrome.com/docs/chromedriver/downloads
-service = Service('path/chromedriver-win64/chromedriver.exe')
+service = Service('D:/Estiven/Trabajo/Freelancer/booking_scraping_analysis/chromedriver-win64/chromedriver.exe')
 
 # Create a new Options object
 options = webdriver.ChromeOptions()
@@ -144,8 +144,7 @@ def scrape_booking_page(soup):
                 hotel_name, score_text, distance, price_text, 
                 taxes_text, total_price, nights_adults_text, card_deal_text, 
                 stars, subway_access, neighborhood, room_type,
-                bed_type, cancellation_policy, payment_policy, review_class, number_of_reviews
-            ])
+                bed_type, cancellation_policy, payment_policy, review_class, number_of_reviews])
         except Exception as e:
             print(f"Encountered an exception: {e}")
             continue
@@ -168,7 +167,6 @@ async def scrape_expedia_page(url):
 
         cards = await page.locator('[data-stid="lodging-card-responsive"]').all()
         hotels = []
-
         for card in cards:
             try:
                 # Extracting hotel information, similar process to the Booking.com data extraction, but with playwright library
@@ -234,8 +232,8 @@ async def scrape_expedia_page(url):
                     title, price_before_tax, rating, 
                     classification, reviews, stay_type, 
                     bed_type, neighborhood, district, cancellation_policy, 
-                    payment_policy, price_after_tax
-                ])
+                    payment_policy, price_after_tax,
+                    ])
             except Exception as e:
                 print(f"Encountered an exception: {e}")
                 continue
@@ -258,9 +256,9 @@ def scrape_all_pages(url, site):
     all_data = []
     while True:
         try:
-            # Waiting for the property cards to be loded
+            # Waiting for the property cards to be loaded
             if site == 'booking':
-                WebDriverWait(driver,1).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[data-testid="property-card"]')))
+                WebDriverWait(driver, 1).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[data-testid="property-card"]')))
             soup = BeautifulSoup(driver.page_source, 'html.parser')
             if site == 'booking':
                 page_data = scrape_booking_page(soup)
@@ -295,35 +293,41 @@ def main():
     all_booking_data = []
     all_expedia_data = []
 
+    # Inside the loop where you scrape each page
     for snapshot_date in snapshot_dates:
         for ttt in ttt_range:
             for los in los_range:
-                # Generating the urls for both websites
                 booking_url = generate_booking_url(ttt, los, snapshot_date)
                 expedia_url = generate_expedia_url(ttt, los, snapshot_date)
                 
                 # Scraping Booking.com data
                 booking_data = scrape_all_pages(booking_url, 'booking')
+                hotel_index = 1  # Initializing the counter for Booking.com data
                 for hotel in booking_data:
-                    hotel.append(snapshot_date.date())  # Added snapshot date to the data
-                    hotel.append((snapshot_date + timedelta(days=ttt)).date())  # Added check-in date to the data
-                    hotel.append((snapshot_date + timedelta(days=ttt + los)).date())  # Added check-out date to the data
-                    hotel.append(ttt) # Added ttt to the data
-                    hotel.append(los) # Added los to the data
+                    hotel.append(snapshot_date.date())
+                    hotel.append((snapshot_date + timedelta(days=ttt)).date())
+                    hotel.append((snapshot_date + timedelta(days=ttt + los)).date())
+                    hotel.append(ttt)
+                    hotel.append(los)
+                    hotel.append(hotel_index)  # Appending the counter value for hotel index
+                    hotel_index += 1  # Incrementing the counter
                 all_booking_data.extend(booking_data)
 
-                # Scrapin Expedia.com data
+                # Scraping Expedia.com data
                 expedia_data = asyncio.run(scrape_expedia_page(expedia_url))
+                hotel_index = 1  # Initializing the counter for Expedia data
                 for hotel in expedia_data:
                     hotel.append(snapshot_date.date())
                     hotel.append((snapshot_date + timedelta(days=ttt)).date())
                     hotel.append((snapshot_date + timedelta(days=ttt + los)).date())
                     hotel.append(ttt)
                     hotel.append(los)
+                    hotel.append(hotel_index)
+                    hotel_index += 1
                 all_expedia_data.extend(expedia_data)
                 
                 completed_searches += 1
-                print(f"Completed {completed_searches} out of {total_searches} searches.") # Counter
+                print(f"Completed {completed_searches} out of {total_searches} searches.")
 
     # Saving Booking.com data to CSV, I'm ensuring here the columns that are the same with Expedia have the same name
     with open('scraped_data/booking_data1.csv', 'w', newline='', encoding='utf-8') as file:
@@ -333,7 +337,7 @@ def main():
             "Taxes and Fees", "Total Price", "Nights and Adults", "Card Deal", 
             "Stars", "Subway Access", "Neighborhood", "Room Type", "Bed Type", 
             "Cancellation Policy", "Payment Policy", "Classification", "Number of Reviews",
-            "Date of search", "Checkin", "Checkout", "ttt", "los"
+            "Date of search", "Checkin", "Checkout", "ttt", "los", "Hotel Index"
         ])
         writer.writerows(all_booking_data)
 
@@ -343,8 +347,8 @@ def main():
         writer.writerow(["Hotel Name", "Price Before Taxes", "Score", 
                         "Classification", "Number of Reviews", "Room Type", 
                         "Bed Type", "Neighborhood", "District", "Cancellation Policy", "Payment Policy",
-                        "Total Price", "Date of search", "Checkin", "Checkout",
-                        "ttt", "los"])
+                        "Total Price", "Date of search", "Checkin", "Checkout", 
+                        "ttt", "los", "Hotel Index"])
         
         writer.writerows(all_expedia_data)
 
