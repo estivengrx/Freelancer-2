@@ -11,7 +11,7 @@ from playwright.async_api import async_playwright
 
 # Path to the WebDriver executable, in this case I'm using chromedriver, this can be downloaded from the following link:
 # https://developer.chrome.com/docs/chromedriver/downloads
-service = Service('D:/Estiven/Trabajo/Freelancer/booking_scraping_analysis/chromedriver-win64/chromedriver.exe')
+service = Service('path/chromedriver-win64/chromedriver.exe')
 
 # Create a new Options object
 options = webdriver.ChromeOptions()
