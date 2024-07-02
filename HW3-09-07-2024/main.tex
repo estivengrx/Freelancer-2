@@ -1,0 +1,98 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+
+\geometry{left=1in, right=1in, top=1in, bottom=1in}
+
+\title{Question 4 – PAC, VC Dimension, Bias vs Variance}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Section 1: VC Dimension of Circle Classifiers}
+A circle is defined by its center $c \in \mathbb{R}^2$ and its radius $r \in \mathbb{R}$. The classifier family is given by:
+\[
+\mathcal{H} = \{ h_{r,c} : r \in \mathbb{R}, c \in \mathbb{R}^2 \}
+\]
+where
+\[
+h_{r,c}(x) = 
+\begin{cases} 
+1 & \text{if } x \text{ is inside the circle } (r,c) \\
+0 & \text{otherwise} 
+\end{cases}
+\]
+
+To find the VC dimension of this classifier, we need to determine the maximun number of points that can be shattered by this classifier family, sinc this is the definition of the VC dimension.
+
+First, let's consider three non-collinear points in $\mathbb{R}^2$. These points form a triangle. We can show that all $2^3 = 8$ possible labelings can be realized:
+
+\begin{itemize}
+    \item For labelings with 0 or 1 positive point, we can use a small circle to enclose just that point (or no points).
+    \item For labelings with 2 positive points, we can use a large circle that includes those two points but excludes the third.
+    \item For the labeling with all 3 positive points, we can use a circle that encloses all three points.
+\end{itemize}
+
+Now we prove that no set of 4 points can be shattered by circles.
+
+Consider any 4 points in $\mathbb{R}^2$. There are two cases:
+
+\begin{itemize}
+    \item \textbf{Case 1:} If all 4 points lie on a circle, then it's impossible to label just the three points that do not form the vertices of the largest inscribed triangle as positive. No circle can include only these three points without including the fourth.
+    \item \textbf{Case 2:} If the 4 points do not all lie on a circle, then three of these points determine a unique circle. The fourth point must either be inside or outside this circle. It's impossible to label the points so that the three points determining the circle are negative and the fourth point is positive.
+\end{itemize}
+
+Therefore, no set of 4 points can be shattered by circles. I have shown that 3 points can be shattered but 4 points ca nnot, so the VC dimension is 3.
+
+\section*{Section 2: Sample Complexity for Learning with Depth-1 Decision Trees}
+Given a training set $S = \{(x_1, y_1), \ldots, (x_n, y_n)\}$ where $x_i \in \{0,1\}^3$, and the classification rule:
+\[
+Y = (X_1 \land X_2) \lor (\neg X_1 \land \neg X_2)
+\]
+
+We use a "depth-1 decision tree," which is a tree with a root and two leaves.
+
+\subsection*{Analysis and Sample Complexity}
+
+A depth-1 decision tree makes a single split based on one feature, leadin to two possible outputs. Given the rule above, the function is not linearly separable in terms of a single feature, indicating that a depth-1 tree may not capture the complexity of this function well.
+
+The rule $Y = (X_1 \land X_2) \lor (\neg X_1 \land \neg X_2)$ suggests that the output is based on pairs of features, making it difficult for a single split to fully capture the relationship. However, we can still analyze the sample complexity required for a depth-1 decision tree.
+
+The sample complexyti for learning a decision tree with error $\epsilon$ and confidence $1 - \delta$ can be approximated by:
+\[
+m = O\left(\frac{d}{\epsilon} \log\left(\frac{d}{\epsilon}\right) + \frac{1}{\epsilon} \log\left(\frac{1}{\delta}\right)\right)
+\]
+For a depth-1 decision tree, the VC dimension $d$ is 1, simplifying to:
+\[
+m = O\left(\frac{1}{\epsilon} \log\left(\frac{1}{\epsilon}\right) + \frac{1}{\epsilon} \log\left(\frac{1}{\delta}\right)\right)
+\]
+
+This suggests that even though a depth-1 decision tree may not perfectly model the given function, it can still be learned with a sample size proportional to $m$.
+
+\section*{Section 3: Matching SVM Polynomial Kernel Degrees to Error Graphs}
+Dana tried polynomial kernel SVMs with degrees $d=2, 10, 20$ and varied the training samples from 15 to 85. The task is to match each graph to the correct degree $d$ and identify the train and test error lines.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{graph1.png}
+    \caption{Degree $d=20$}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{graph2.png}
+    \caption{Degree $d=10$}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{graph3.png}
+    \caption{Degree $d=2$}
+\end{figure}
+
+\end{document}
