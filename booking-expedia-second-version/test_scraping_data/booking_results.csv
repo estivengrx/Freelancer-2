@@ -1,0 +1,80 @@
+TTT,LOS,Date of Search,Index,Hotel Name,Score,Distance,Price Before Tax,Taxes,Total Price,Nights & Adults,Stars,Subway Access,Neighborhood,Room Type,Bed Type,Cancellation Policy,Payment Policy,Review Class,Number of Reviews
+1,1,2024-07-20,0,The Frederick Hotel Tribeca,8.0,6.3,164,59,223.0,"1 night, 2 adults",5,True,Tribeca,Standard 1 Full Bed,1 full bed,,,Very Good,2272 
+1,1,2024-07-20,1,45 Times Square Hotel,8.3,1.2,140,24,164.0,"1 night, 2 adults",3,True,Manhattan,Standard Queen Room,1 full bed,,,Very Good,1903 
+1,1,2024-07-20,2,The Manhattan at Times Square,5.6,0.7,109,64,173.0,"1 night, 2 adults",4,True,Manhattan,Standard Queen Room,1 queen bed,,,Review score,7764 
+1,1,2024-07-20,3,Margaritaville Resort Times Square,8.7,1.5,229,95,324.0,"1 night, 2 adults",4,True,Manhattan,Standard Queen Room,1 queen bed,,,Excellent,3306 
+1,1,2024-07-20,4,Fairfield Inn & Suites by Marriott New York Midtown Manhattan/Penn Station,8.2,2.1,155,26,181.0,"1 night, 2 adults",4,True,Hell's Kitchen,King Room,1 king bed,Free cancellation,,Very Good,5182 
+1,1,2024-07-20,5,Residence Inn by Marriott New York Downtown Manhattan/World Trade Center Area,8.5,6.9,133,54,187.0,"1 night, 2 adults",4,True,Manhattan,King Studio,Entire studio•1 bathroom•25m²,,,Very Good,1718 
+1,1,2024-07-20,6,Hotel Edison Times Square,7.4,1.0,129,68,197.0,"1 night, 2 adults",4,True,Manhattan,Classic 1 Queen Bed,1 queen bed,,,Good,15279 
+1,1,2024-07-20,7,Hilton New York Times Square,7.4,1.4,135,64,199.0,"1 night, 2 adults",4,True,Manhattan,King Room,1 king bed,,,Good,841 
+1,1,2024-07-20,8,Hyatt Place NYC Chelsea,7.9,2.8,159,27,186.0,"1 night, 2 adults",4,True,Chelsea,King Room,1 king bed,,,Good,16091 
+1,1,2024-07-20,9,"The Historic Mayfair Hotel Times Square, Ascend Hotel Collection",8.6,0.8,110,48,158.0,"1 night, 2 adults",3,True,Manhattan,Deluxe Double Room - Non Smoking,1 full bed,,,Excellent,914 
+1,1,2024-07-20,10,Pod Times Square,8.1,1.4,119,44,163.0,"1 night, 2 adults",3,True,Hell's Kitchen,Bunk Pod,2 twin beds,,,Very Good,22398 
+1,1,2024-07-20,11,"Kimpton Hotel Theta, an IHG Hotel",8.4,0.9,150,73,223.0,"1 night, 2 adults",5,True,Manhattan,King Room,1 king bed,,,Very Good,773 
+1,1,2024-07-20,12,Hyatt Place New York City/Times Square,7.6,1.7,169,28,197.0,"1 night, 2 adults",4,True,Hell's Kitchen,Standard King Room,1 king bed,,,Good,21670 
+1,1,2024-07-20,13,Hilton Garden Inn New York Manhattan Midtown East,7.4,1.6,129,23,152.0,"1 night, 2 adults",3,True,Midtown East,King Room,1 king bed,Free cancellation,,Good,1431 
+1,1,2024-07-20,14,DoubleTree by Hilton Hotel New York City - Chelsea,7.3,2.5,134,23,157.0,"1 night, 2 adults",4,True,Chelsea,Queen Room with Roll-In Shower - Mobility Access/Non-Smoking,1 queen bed,Free cancellation,,Good,2741 
+1,1,2024-07-20,15,Four Points by Sheraton New York Downtown,7.4,7.0,119,21,140.0,"1 night, 2 adults",3,True,Manhattan,"Guest room, 1 Queen",1 queen bed,Free cancellation,,Good,2259 
+1,1,2024-07-20,16,Fairfield Inn & Suites by Marriott New York Manhattan/Fifth Avenue,7.4,1.9,129,23,152.0,"1 night, 2 adults",3,True,Manhattan,King Room,1 king bed,,,Good,582 
+1,1,2024-07-20,17,Sanctuary Hotel New York,8.1,1.1,125,50,175.0,"1 night, 2 adults",4,True,Manhattan,Accessible Queen,1 queen bed,,,Very Good,1422 
+1,1,2024-07-20,18,Royalton New York,7.8,1.4,152,66,218.0,"1 night, 2 adults",4,True,Manhattan,Standard Queen Room,1 queen bed,,,Good,2518 
+1,1,2024-07-20,19,Hyatt Union Square New York,7.7,3.9,149,60,209.0,"1 night, 2 adults",4,True,Union Square,King Room with Courtyard View,1 king bed,,,Good,285 
+1,1,2024-07-20,20,Riu Plaza New York Times Square,8.5,1.0,179,63,242.0,"1 night, 2 adults",4,True,Hell's Kitchen,Deluxe Queen Room,1 queen bed,,,Very Good,7447 
+1,1,2024-07-20,21,M Social Hotel Times Square New York,8.4,0.6,179,70,249.0,"1 night, 2 adults",4,True,Manhattan,Social City View King,1 king bed,,,Very Good,11037 
+1,1,2024-07-20,22,Artezen Hotel,9.1,6.9,134,39,173.0,"1 night, 2 adults",4,True,Manhattan,Deluxe King Room,1 king bed,,,Wonderful,1102 
+1,1,2024-07-20,23,Hyatt Place New York/Midtown-South,8.2,2.0,169,28,197.0,"1 night, 2 adults",4,True,Manhattan,King Room,1 king bed,,,Very Good,3226 
+1,1,2024-07-20,24,Solita Soho Hotel,7.7,5.6,99,41,140.0,"1 night, 2 adults",3,True,Little Italy,Standard Queen Room,1 queen bed,,,Good,1150 
+1,1,2024-07-20,25,City Club Hotel,7.2,1.4,110,48,158.0,"1 night, 2 adults",4,True,Manhattan,Petite Room,1 full bed,,,Good,2185 
+1,1,2024-07-27,0,The Frederick Hotel Tribeca,8.0,6.3,148,56,204.0,"1 night, 2 adults",5,True,Tribeca,Standard 1 Full Bed,1 full bed,,,Very Good,2272 
+1,1,2024-07-27,1,Residence Inn New York Downtown Manhattan/Financial District,7.8,7.1,169,30,199.0,"1 night, 2 adults",4,True,Manhattan,"Studio, 1 King",1 king bed,Free cancellation,,Good,738 
+1,1,2024-07-27,2,Roxy Hotel New York,8.5,5.8,249,86,335.0,"1 night, 2 adults",4,True,Tribeca,Standard  Room,1 full bed,,,Very Good,1241 
+1,1,2024-07-27,3,Aloft Manhattan Downtown - Financial District,7.4,6.8,129,23,152.0,"1 night, 2 adults",4,True,Manhattan,"Guest Room, 1 King",1 king bed,Free cancellation,,Good,1178 
+1,1,2024-07-27,4,Hilton Garden Inn New York Central Park South-Midtown West,7.3,0.45,97,18,115.0,"1 night, 2 adults",3,True,Manhattan,King Room with Roll-In Shower - Mobility and Hearing Access,1 king bed,,,Good,8656 
+1,1,2024-07-27,5,Hilton Garden Inn New York Times Square South,8.1,1.8,125,22,147.0,"1 night, 2 adults",3,True,Hell's Kitchen,King Room,1 king bed,,,Very Good,4325 
+1,1,2024-07-27,6,"The Historic Mayfair Hotel Times Square, Ascend Hotel Collection",8.6,0.8,99,47,146.0,"1 night, 2 adults",3,True,Manhattan,Deluxe Double Room - Non Smoking,1 full bed,,,Excellent,914 
+1,1,2024-07-27,7,Fairfield Inn & Suites by Marriott New York Midtown Manhattan/Penn Station,8.2,2.1,150,26,176.0,"1 night, 2 adults",4,True,Hell's Kitchen,King Room,1 king bed,Free cancellation,,Very Good,5182 
+1,1,2024-07-27,8,SpringHill Suites by Marriott New York Manhattan Chelsea,8.2,2.5,143,25,168.0,"1 night, 2 adults",4,True,Chelsea,Studio King Room,Entire studio•1 bedroom•1 bathroom•19m²,,,Very Good,9256 
+1,1,2024-07-27,9,Fairfield Inn & Suites by Marriott New York Manhattan/Central Park,7.9,0.7,140,24,164.0,"1 night, 2 adults",3,True,Hell's Kitchen,King Room,1 king bed,,,Good,1233 
+1,1,2024-07-27,10,"U Hotel Fifth Avenue, Empire State Building",7.9,2.1,100,41,141.0,"1 night, 2 adults",3,True,Manhattan,Double Room,1 full bed,,,Good,3136 
+1,1,2024-07-27,11,"Crowne Plaza Times Square Manhattan, an IHG Hotel",7.7,0.9,127,62,189.0,"1 night, 2 adults",4,True,Manhattan,Standard Room,1 king bed,,,Good,7231 
+1,1,2024-07-27,12,Hyatt Place NYC Chelsea,7.9,2.8,159,27,186.0,"1 night, 2 adults",4,True,Chelsea,King Room with Roll-In Shower - Disability Access,1 king bed,Free cancellation,,Good,16091 
+1,1,2024-07-27,13,"Hotel Indigo NYC Downtown - Wall Street, an IHG Hotel",8.3,7.3,103,53,156.0,"1 night, 2 adults",4,True,Manhattan,Standard Queen Room - Communications Access,1 queen bed,,,Very Good,942 
+1,1,2024-07-27,14,SoHo 54,7.2,5.3,99,53,152.0,"1 night, 2 adults",3,True,SoHo,SoHo King,1 king bed,Free cancellation,,Good,3019 
+1,1,2024-07-27,15,La Quinta by Wyndham Time Square South,8.3,1.7,127,44,171.0,"1 night, 2 adults",3,True,Hell's Kitchen,King Room - Non-Smoking,1 king bed,,,Very Good,4058 
+1,1,2024-07-27,16,"The Draper New York, Tapestry Collection by Hilton",8.3,1.9,129,23,152.0,"1 night, 2 adults",3,True,Manhattan,King Room,1 king bed,,,Very Good,1501 
+1,1,2024-07-27,17,"Holiday Inn Express Manhattan Midtown West, an IHG Hotel",7.0,1.1,131,23,154.0,"1 night, 2 adults",3,True,Hell's Kitchen,Executive Double Room - Non-Smoking,2 full beds,,,Good,1471 
+1,1,2024-07-27,18,"Holiday Inn New York City - Times Square, an IHG Hotel",7.7,1.6,127,22,149.0,"1 night, 2 adults",3,True,Hell's Kitchen,Standard King Room,1 king bed,,,Good,1962 
+1,1,2024-07-27,19,Wingate by Wyndham New York Midtown South/5th Ave,8.1,1.9,135,23,158.0,"1 night, 2 adults",3,True,Manhattan,King Room - Non-Smoking,1 king bed,,,Very Good,2154 
+1,1,2024-07-27,20,Courtyard by Marriott New York Manhattan/ Fifth Avenue,8.0,1.8,143,25,168.0,"1 night, 2 adults",4,True,Manhattan,Double Room with Two Double Beds,2 full beds,,,Very Good,1344 
+1,1,2024-07-27,21,Hyatt Place New York City/Times Square,7.6,1.7,169,28,197.0,"1 night, 2 adults",4,True,Hell's Kitchen,Standard King Room,1 king bed,Free cancellation,,Good,21670 
+1,1,2024-07-27,22,Hampton Inn Madison Square Garden,7.5,2.3,134,23,157.0,"1 night, 2 adults",3,True,Chelsea,King Room with Roll-In Shower - Mobility and Hearing Access/Non-Smoking,1 king bed,,,Good,1178 
+1,1,2024-07-27,23,"The Historic Blue Angel Hotel Lexington Ave, Ascend Hotel Collection",8.7,1.5,120,44,164.0,"1 night, 2 adults",3,True,Midtown East,Queen Room - Non-Smoking,1 queen bed,Free cancellation,,Excellent,996 
+1,1,2024-07-27,24,Hampton Inn Manhattan - Times Square South,6.6,1.6,129,23,152.0,"1 night, 2 adults",3,True,Hell's Kitchen,King Room with Refrigerator - Non-Smoking,1 king bed,,,Review score,2380 
+1,1,2024-07-27,25,Sanctuary Hotel New York,8.1,1.1,125,50,175.0,"1 night, 2 adults",4,True,Manhattan,Cozy Queen,1 full bed,,,Very Good,1422 
+1,1,2024-07-27,26,Four Points by Sheraton Manhattan Midtown West,8.2,2.0,148,25,173.0,"1 night, 2 adults",4,True,Hudson Yards,Queen Room,1 queen bed,,,Very Good,2208 
+1,1,2024-08-03,0,Hotel Belleclaire Central Park,8.1,1.6,160,60,220.0,"1 night, 2 adults",4,True,Upper West Side,Standard 1 Full Bed,1 twin bed,Free cancellation,,Very Good,4466 
+1,1,2024-08-03,1,Residence Inn New York Downtown Manhattan/Financial District,7.8,7.1,152,28,180.0,"1 night, 2 adults",4,True,Manhattan,"Studio, 1 King",1 king bed,,,Good,738 
+1,1,2024-08-03,2,The Manhattan at Times Square,5.6,0.7,111,64,175.0,"1 night, 2 adults",4,True,Manhattan,Standard Queen Room,1 queen bed,,,Review score,7764 
+1,1,2024-08-03,3,Aloft Manhattan Downtown - Financial District,7.4,6.8,130,23,153.0,"1 night, 2 adults",4,True,Manhattan,"Guest Room, 1 King",1 king bed,,,Good,1178 
+1,1,2024-08-03,4,SoHo 54,7.2,5.3,109,54,163.0,"1 night, 2 adults",3,True,SoHo,SoHo King,1 king bed,Free cancellation,,Good,3019 
+1,1,2024-08-03,5,Hotel Edison Times Square,7.4,1.0,149,71,220.0,"1 night, 2 adults",4,True,Manhattan,Classic 1 Queen Bed,1 queen bed,Free cancellation,,Good,15279 
+1,1,2024-08-03,6,"The Historic Mayfair Hotel Times Square, Ascend Hotel Collection",8.6,0.8,131,51,182.0,"1 night, 2 adults",3,True,Manhattan,King Room - Non Smoking,1 king bed,,,Excellent,914 
+1,1,2024-08-03,7,"Holiday Inn Manhattan 6th Ave - Chelsea, an IHG Hotel",7.0,2.7,135,20,155.0,"1 night, 2 adults",4,True,Chelsea,Standard King Room,1 king bed,,,Good,4370 
+1,1,2024-08-03,8,Pod Times Square,8.1,1.4,134,46,180.0,"1 night, 2 adults",3,True,Hell's Kitchen,Full Pod,1 full bed,,,Very Good,22398 
+1,1,2024-08-03,9,Hilton Garden Inn New York Central Park South-Midtown West,7.3,0.45,145,25,170.0,"1 night, 2 adults",3,True,Manhattan,King Room with Roll-In Shower - Mobility and Hearing Access,1 king bed,,,Good,8656 
+1,1,2024-08-03,10,Hyatt Place New York City/Times Square,7.6,1.7,179,30,209.0,"1 night, 2 adults",4,True,Hell's Kitchen,Standard King Room,1 king bed,Free cancellation,,Good,21670 
+1,1,2024-08-03,11,"The Historic Blue Angel Hotel Lexington Ave, Ascend Hotel Collection",8.7,1.5,128,45,173.0,"1 night, 2 adults",3,True,Midtown East,Interior Room - No Windows,1 full bed,,,Excellent,996 
+1,1,2024-08-03,12,TownePlace Suites by Marriott New York Manhattan/Chelsea,8.1,2.5,157,27,184.0,"1 night, 2 adults",4,True,Chelsea,King Studio with Kitchenette,Entire studio•1 bathroom•19m²,,,Very Good,6518 
+1,1,2024-08-03,13,Citadines Connect Fifth Avenue New York,7.5,1.4,133,48,181.0,"1 night, 2 adults",3,True,Manhattan,Premier King Room,1 king bed,,,Good,3103 
+1,1,2024-08-03,14,"The Cloud One New York-Downtown, by the Motel One Group",8.4,7.0,149,25,174.0,"1 night, 2 adults",4,True,Manhattan,Standard King Room,1 king bed,Free cancellation,,Very Good,4814 
+1,1,2024-08-03,15,M Social Hotel Times Square New York,8.4,0.6,170,69,239.0,"1 night, 2 adults",4,True,Manhattan,Social City View King,1 king bed,,,Very Good,11037 
+1,1,2024-08-03,16,"Hotel Indigo NYC Downtown - Wall Street, an IHG Hotel",8.3,7.3,119,56,175.0,"1 night, 2 adults",4,True,Manhattan,Standard Queen Room,1 queen bed,,,Very Good,942 
+1,1,2024-08-03,17,Royalton New York,7.8,1.4,144,65,209.0,"1 night, 2 adults",4,True,Manhattan,Standard Queen Room,1 queen bed,Free cancellation,,Good,2518 
+1,1,2024-08-03,18,Hotel Indigo Lower East Side New York,7.4,5.2,127,64,191.0,"1 night, 2 adults",4,True,Lower East Side,Standard Double Room with View,1 queen bed,,,Good,629 
+1,1,2024-08-03,19,Sheraton Tribeca New York Hotel,7.7,5.6,143,25,168.0,"1 night, 2 adults",4,True,Tribeca,Standard King Room,1 king bed,,,Good,3405 
+1,1,2024-08-03,20,MOXY NYC Times Square,8.1,1.9,148,60,208.0,"1 night, 2 adults",4,True,Manhattan,Double Room,1 full bed,,,Very Good,6849 
+1,1,2024-08-03,21,Motto By Hilton New York City Times Square,8.2,1.0,137,59,196.0,"1 night, 2 adults",3,True,Manhattan,Queen Room,1 queen bed,,,Very Good,533 
+1,1,2024-08-03,22,Doubletree By Hilton New York Times Square West,7.1,1.6,135,23,158.0,"1 night, 2 adults",4,True,Hell's Kitchen,One King Bed Hearing Accessible,1 king bed,,,Good,13893 
+1,1,2024-08-03,23,Millennium Hotel Broadway Times Square,7.3,1.3,144,59,203.0,"1 night, 2 adults",4,True,Manhattan,Standard Queen Room,1 queen bed,Free cancellation,,Good,7734 
+1,1,2024-08-03,24,AC Hotel by Marriott New York Downtown,8.5,7.2,134,23,157.0,"1 night, 2 adults",4,True,Manhattan,King Guest Room - One King Bed - Non-Smoking,1 king bed,,,Very Good,1725 
+1,1,2024-08-03,25,70 Park Avenue Hotel,8.3,2.0,159,67,226.0,"1 night, 2 adults",4,True,Murray Hill,Essential Queen Room,1 queen bed,,,Very Good,1891 

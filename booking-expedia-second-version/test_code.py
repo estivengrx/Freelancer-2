@@ -147,33 +147,39 @@ async def scrape_expedia_page(url, ttt, los, date_of_search):
         return hotels
 
 async def main():
-    snapshot_date = datetime.today().strftime('%Y-%m-%d')
+    snapshot_dates = [datetime.today(), datetime.today() + timedelta(days=7), datetime.today() + timedelta(days=14)] # Snapshot dates for the data extraction
+    total_searches = len(snapshot_dates) * 30 * 5 # Total number of searches
+    completed_searches = 0
+
     booking_data = []
     expedia_data = []
 
-    for ttt in range(1, 3):
-        for los in range(1, 2):
-            booking_url = generate_booking_url(ttt, los, datetime.strptime(snapshot_date, '%Y-%m-%d'))
-            expedia_url = generate_expedia_url(ttt, los, datetime.strptime(snapshot_date, '%Y-%m-%d'))
+    for snapshot_date in snapshot_dates:
+        for ttt in range(1, 2):
+            for los in range(1, 2):
+                booking_url = generate_booking_url(ttt, los, snapshot_date)
+                expedia_url = generate_expedia_url(ttt, los, snapshot_date)
 
-            driver.get(booking_url)
-            time.sleep(10)
-            booking_soup = BeautifulSoup(driver.page_source, 'html.parser')
-            booking_data.extend(scrape_booking_page(booking_soup, ttt, los, snapshot_date))
+                driver.get(booking_url)
+                time.sleep(10)
+                booking_soup = BeautifulSoup(driver.page_source, 'html.parser')
+                booking_data.extend(scrape_booking_page(booking_soup, ttt, los, snapshot_date.strftime('%Y-%m-%d')))
 
-            expedia_data.extend(await scrape_expedia_page(expedia_url, ttt, los, snapshot_date))
-            print(f'Finished scraping for TTT={ttt} and LOS={los}')
+                expedia_data.extend(await scrape_expedia_page(expedia_url, ttt, los, snapshot_date.strftime('%Y-%m-%d')))
+                
+                completed_searches += 1
+                print(f'Completed {completed_searches} of {total_searches} searches.')
 
     driver.quit()
 
-    with open('booking_results.csv', 'w', newline='', encoding='utf-8') as f:
+    with open('test_scraping_data/booking_results.csv', 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(['TTT', 'LOS', 'Date of Search', 'Index', 'Hotel Name', 'Score', 'Distance', 'Price Before Tax', 'Taxes', 'Total Price', 
                          'Nights & Adults', 'Stars', 'Subway Access', 'Neighborhood', 'Room Type', 'Bed Type', 'Cancellation Policy', 
                          'Payment Policy', 'Review Class', 'Number of Reviews'])
         writer.writerows(booking_data)
 
-    with open('expedia_results.csv', 'w', newline='', encoding='utf-8') as f:
+    with open('test_scraping_data/expedia_results.csv', 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(['TTT', 'LOS', 'Date of Search', 'Index', 'Hotel Name', 'Price Before Tax', 'Price After Tax', 'Rating', 
                          'Classification', 'Reviews', 'Neighborhood'])
