@@ -73,10 +73,10 @@ def scrape_booking_page(soup):
     for hotel in hotel_containers:
         try:
             # Extract hotel information, this is retrieved from the html tags that appear here:
-            hotel_name = hotel.find('div', {'class': 'fa4a3a8221 b121bc708f'}).get_text(strip=True)
+            hotel_name = hotel.find('div', {'class': 'e037993315 f5f8fe25fa'}).get_text(strip=True)
 
             score_tag = hotel.find('div', {'data-testid': 'review-score'})
-            score_text = score_tag.find('div', {'class': 'f13857cc8c e008572b71'}).get_text(strip=True).split()[1] if score_tag else None
+            score_text = score_tag.find('div', {'class': 'a447b19dfd'}).get_text(strip=True).split()[1] if score_tag else None
 
             distance_tag = hotel.find('span', {'data-testid': 'distance'})
             distance = distance_tag.get_text(strip=True).split('from')[0].replace(',', '') if distance_tag else None
@@ -100,40 +100,40 @@ def scrape_booking_page(soup):
             stars_tag = hotel.find('div', {'data-testid': 'rating-stars'})
             stars = len(stars_tag.find_all('svg')) if stars_tag else None
 
-            subway_access_tag = hotel.find('span', {'class': 'f5113518a6'})
+            subway_access_tag = hotel.find('span', {'class': 'cdebd92b49'})
             subway_access = True if subway_access_tag else False
 
             neighborhood_tag = hotel.find('span', {'data-testid': 'address'})
             neighborhood = neighborhood_tag.get_text(strip=True).split(', ')[0] if neighborhood_tag else None
 
-            room_type_tag = hotel.find('h4', {'class': 'b290e5dfa6 cf1a0708d9'})
+            room_type_tag = hotel.find('h4', {'class': 'e8acaa0d22 e7baf22fe8'})
             room_type = room_type_tag.get_text(strip=True) if room_type_tag else None
 
-            bed_type_tag = hotel.find('div', {'class': 'ded2b5e753'}).find('div', {'class': 'b290e5dfa6'})
+            bed_type_tag = hotel.find('div', {'class': 'dfdb404493'}).find('div', {'class': 'e8acaa0d22'})
             bed_type = bed_type_tag.get_text(strip=True) if bed_type_tag else None
 
             cancellation_policy = None
             payment_policy = None
 
-            # Find all li tags with the class 'a6a38de85e' within the hotel element
-            li_tags = hotel.find_all('li', class_='deaf462b24')
+            # Find all ul tags with the class 'a6a38de85e' within the hotel element
+            li_tags = hotel.find_all('ul', class_='cf8b8c08b2')
 
             # Iterating over each li tag and extract the respective policy based on the presence of unique icons or identifiers
             for li in li_tags:
                 # Checking for the cancellation policy icon
                 if li.find('span', {'data-testid': 'cancellation-policy-icon'}):
-                    cancellation_policy_tag = li.find('div', {'class': 'daa8593c50 a1af39b461'}).find('div', {'class': 'b290e5dfa6 b0eee6023f'})
+                    cancellation_policy_tag = li.find('div', {'class': 'ec7ca45eb7 c5df7d7c0e'}).find('div', {'class': 'e8acaa0d22 d40b1dc96f'})
                     cancellation_policy = cancellation_policy_tag.get_text(strip=True) if cancellation_policy_tag else None
                 # Checking for the payment policy icon
                 elif li.find('span', {'data-testid': 'prepayment-policy-icon'}):
-                    payment_policy_tag = li.find('div', {'class': 'daa8593c50 a1af39b461'}).find('div', {'class': 'b290e5dfa6 b0eee6023f'})
+                    payment_policy_tag = li.find('div', {'class': 'ec7ca45eb7 c5df7d7c0e'}).find('div', {'class': 'e8acaa0d22 d40b1dc96f'})
                     payment_policy = payment_policy_tag.get_text(strip=True) if payment_policy_tag else None
 
             # Classification
-            review_class_tag = hotel.find('div', {'class': 'e98ee79976 daa8593c50 fd9c2cba1d'}).find('div', {'class': 'f13857cc8c e6314e676b a287ba9834'})
+            review_class_tag = hotel.find('div', {'data-testid': 'review-score'}).find('div', {'class': 'd0522b0cca eb02592978 f374b67e8c'})
             review_class = review_class_tag.get_text(strip=True) if review_class_tag else None
 
-            number_of_reviews_tag = hotel.find('div', {'class': 'e98ee79976 daa8593c50 fd9c2cba1d'}).find('div', {'class': 'b290e5dfa6 a5cc9f664c c4b07b6aa8'})
+            number_of_reviews_tag = hotel.find('div', {'data-testid': 'review-score'}).find('div', {'class': 'e8acaa0d22 ab107395cb c60bada9e4'})
             number_of_reviews = number_of_reviews_tag.get_text(strip=True).split('reviews')[0].replace(',', '') if number_of_reviews_tag else None
 
             # Append the extracted data to the data list, this is the data that will be saved to the CSV file
@@ -244,7 +244,7 @@ def scrape_all_pages(url, site):
         try:
             # Waiting for the property cards to be loaded
             if site == 'booking':
-                WebDriverWait(driver, 1).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[data-testid="property-card"]')))
+                WebDriverWait(driver, 5).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div[data-testid="property-card"]')))
             soup = BeautifulSoup(driver.page_source, 'html.parser')
             if site == 'booking':
                 page_data = scrape_booking_page(soup)
@@ -253,9 +253,9 @@ def scrape_all_pages(url, site):
             next_button = None
             if site == 'booking':
                 next_button = driver.find_elements(By.CSS_SELECTOR, 'button[data-testid="pagination-next"]')
-            if next_button and next_button[0].is_displayed() and len(all_data) < 100:
+            if next_button and next_button[0].is_displayed() and len(all_data) < 200:  # Increased limit
                 next_button[0].click()
-                time.sleep(1)
+                time.sleep(5)
             else:
                 break
         except Exception as e:
@@ -270,8 +270,8 @@ def main():
     The data is saved to CSV files: 'booking_data.csv' and 'expedia_data.csv'.
     """
     snapshot_dates = [datetime.today(), datetime.today() + timedelta(days=7), datetime.today() + timedelta(days=14)] # Snapshot dates for the data extraction
-    ttt_range = range(1, 2)    # Time to travel range
-    los_range = range(1, 2)    # Length of stay range
+    ttt_range = range(1, 31)    # Time to travel range
+    los_range = range(1, 6)    # Length of stay range
     
     total_searches = len(snapshot_dates) * len(ttt_range) * len(los_range) # Total number of searches, this will act as a counter in the terminal
     completed_searches = 0
@@ -322,8 +322,8 @@ def main():
             "Hotel Name", "Score", "Distance to Center", "Price", 
             "Taxes and Fees", "Total Price", "Nights and Adults",
             "Stars", "Subway Access", "Neighborhood", "Room Type", "Bed Type", 
-            "Cancellation Policy", "Payment Policy", "Classification", "Number of Reviews",
             "Date of search", "Checkin", "Checkout", "ttt", "los", "Hotel Index"
+            "Cancellation Policy", "Payment Policy", "Classification", "Number of Reviews",
         ])
         writer.writerows(all_booking_data)
 
