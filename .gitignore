@@ -10,3 +10,4 @@
 *.npy
 *.exe
 *.chromedriver
+*powerbi-dataanalysis-project/data/appearances.csv
