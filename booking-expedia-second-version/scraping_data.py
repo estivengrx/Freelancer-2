@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
 # Path to the WebDriver executable
-service = Service('D:/Estiven/Trabajo/Freelancer 2/booking-expedia-second-version/chromedriver-win64/chromedriver.exe')
+service = Service('path_to_webdriver/chromedriver-win64/chromedriver.exe')
 
 # Create a new Options object
 options = Options()
@@ -155,8 +155,8 @@ async def main():
     expedia_data = []
 
     for snapshot_date in snapshot_dates:
-        for ttt in range(1, 31):
-            for los in range(1, 6):
+        for ttt in range(1, 2):
+            for los in range(1, 2):
                 booking_url = generate_booking_url(ttt, los, snapshot_date)
                 expedia_url = generate_expedia_url(ttt, los, snapshot_date)
 
@@ -172,14 +172,14 @@ async def main():
 
     driver.quit()
 
-    with open('test_scraping_data/booking_results.csv', 'w', newline='', encoding='utf-8') as f:
+    with open('scraped_data/booking_results.csv', 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(['TTT', 'LOS', 'Date of Search', 'Index', 'Hotel Name', 'Score', 'Distance', 'Price Before Tax', 'Taxes', 'Total Price', 
                          'Nights & Adults', 'Stars', 'Subway Access', 'Neighborhood', 'Room Type', 'Bed Type', 'Cancellation Policy', 
                          'Payment Policy', 'Review Class', 'Number of Reviews'])
         writer.writerows(booking_data)
 
-    with open('test_scraping_data/expedia_results.csv', 'w', newline='', encoding='utf-8') as f:
+    with open('scraped_data/expedia_results.csv', 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(['TTT', 'LOS', 'Date of Search', 'Index', 'Hotel Name', 'Price Before Tax', 'Price After Tax', 'Rating', 
                          'Classification', 'Reviews', 'Neighborhood'])
