@@ -11,3 +11,5 @@
 *.exe
 *.chromedriver
 *powerbi-dataanalysis-project/data/appearances.csv
+*powerbi-dataanalysis-project/main_excel_file.xlsm
+*powerbi-dataanalysis-project/main_excel_file.xlsx
